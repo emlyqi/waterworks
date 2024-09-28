@@ -1,7 +1,6 @@
 # page1.py
 import sqlite3
 import streamlit as st
-from SQLAlchemy import create_engine
 import folium
 from streamlit_folium import st_folium
 import pandas as pd
