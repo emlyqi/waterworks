@@ -1,4 +1,7 @@
 -- @block
+ALTER TABLE water_fountains 
+RENAME COLUMN lattitude to latitude;
+-- @block
 UPDATE water_fountains 
 SET lattitude = 43.472329, longitude = -80.546754
 WHERE id = 3;

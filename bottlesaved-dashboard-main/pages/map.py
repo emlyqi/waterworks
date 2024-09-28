@@ -10,7 +10,6 @@ import pandas as pd
 if "shared" not in st.session_state:
    st.session_state["shared"] = True
 
-
 # Create a temporary SQLite database
 conn = sqlite3.connect('temp_database.db')
 
@@ -21,7 +20,7 @@ with open('waterworks.session.sql', 'r') as file:
 conn.execute(sql_script)
 
 # Fetch data from the SQLite database
-query = "SELECT name, longitude, latitude FROM Water_Fountains"
+query = "SELECT name, longitude, latitude FROM  Water_Fountains"
 data = pd.read_sql(query, conn)
 
 
