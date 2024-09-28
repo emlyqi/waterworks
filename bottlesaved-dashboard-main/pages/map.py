@@ -1,14 +1,31 @@
 # page1.py
+import sqlite3
 import streamlit as st
-
+from sqlalchemy import create_engine
 import folium
 from streamlit_folium import st_folium
+import pandas as pd
 
 
 if "shared" not in st.session_state:
    st.session_state["shared"] = True
 
-m = folium.Map(location=[43.471041, -80.541412], zoom_start=15)
+
+# Create a temporary SQLite database
+conn = sqlite3.connect('temp_database.db')
+
+# Read SQL file and execute it
+with open('waterworks.session.sql', 'r') as file:
+   sql_script = file.read()
+
+conn.execute(sql_script)
+
+# Fetch data from the SQLite database
+query = "SELECT name, longitude, latitude FROM Water_Fountains"
+data = pd.read_sql(query, conn)
+
+
+m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=15)
 
 folium.TileLayer('openstreetmap').add_to(m)
 folium.TileLayer('CartoDB dark_matter').add_to(m)
@@ -16,25 +33,15 @@ folium.TileLayer('CartoDB positron').add_to(m)
 folium.LayerControl().add_to(m)
 
 
-# Sample data for locations
-locations = [
-    {"name": "fountain1", "lat": 43.471041, "lon": -80.541412},
-    {"name": "fountain2", "lat": 43.471041, "lon": -80.530130},
-    {"name": "fountain3", "lat": 43.471041, "lon": -80.490233},
-]
-
-# st.
-
-# Optional: Add a custom CircleMarker for precision
-for loc in locations:
+for idx, row in data.iterrows():
     folium.CircleMarker(
-        location=[loc['lat'], loc['lon']],
-        radius=3,  # Adjust the size here
+        location=[row['latitude'], row['longitude']],
+        radius=3,
         color='blue',
         fill=True,
         fill_color='blue',
         fill_opacity=0.6,
-        popup=loc['name']
+        popup=row['name']
     ).add_to(m)
 
 # Display the map
