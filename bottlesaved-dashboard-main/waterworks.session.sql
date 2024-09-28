@@ -1,4 +1,3 @@
-
 -- -- @block
 -- ALTER TABLE water_fountains 
 -- RENAME COLUMN name to fountain_name;

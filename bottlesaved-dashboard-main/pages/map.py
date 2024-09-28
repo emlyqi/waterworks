@@ -4,23 +4,36 @@ import streamlit as st
 import folium
 from streamlit_folium import st_folium
 import pandas as pd
+import mysql.connector
+
+def create_connection():
+    connection = mysql.connector.connect(
+        host='localhost',  # e.g., 'localhost'
+        user='yuan',
+        password='SQLjhyuan101!',
+        database='waterworks'
+    )
+    return connection
 
 
 if "shared" not in st.session_state:
    st.session_state["shared"] = True
 
 # Create a temporary SQLite database
-conn = sqlite3.connect('temp_database.db')
+conn = create_connection()
+
+query = "SELECT fountain_name, longitude, latitude FROM  Water_Fountains"
 
 # Read SQL file and execute it
-with open('waterworks.session.sql', 'r') as file:
-   sql_script = file.read()
-
-conn.executescript(sql_script)
+with conn.cursor() as cursor:
+    cursor.execute(query)
+    result = cursor.fetchall()
+    columns = [i[0] for i in cursor.description]
+    data = pd.DataFrame(result, columns=columns)
 
 # Fetch data from the SQLite database
-query = "SELECT name, longitude, latitude FROM  Water_Fountains"
-data = pd.read_sql(query, conn)
+
+
 
 print("Executing SQL script:")
 
@@ -41,7 +54,7 @@ for idx, row in data.iterrows():
         fill=True,
         fill_color='blue',
         fill_opacity=0.6,
-        popup=row['name']
+        popup=row['fountain_name']
     ).add_to(m)
 
 # Display the map
