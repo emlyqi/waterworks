@@ -1,4 +1,14 @@
 -- @block
+UPDATE water_fountains 
+SET lattitude = 43.472329, longitude = -80.546754
+WHERE id = 3;
+-- @block
+ALTER TABLE water_fountains 
+ADD lattitude FLOAT
+
+-- @block
+SELECT * FROM water_fountains
+-- @block
 SELECT * FROM Users
 INNER JOIN water_fountains_rating
 ON Users.id = water_fountains_rating.user_id
