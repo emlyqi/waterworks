@@ -1,7 +1,7 @@
 # page1.py
 import sqlite3
 import streamlit as st
-from sqlalchemy import create_engine
+from SQLAlchemy import create_engine
 import folium
 from streamlit_folium import st_folium
 import pandas as pd
@@ -18,11 +18,13 @@ with open('waterworks.session.sql', 'r') as file:
    sql_script = file.read()
 
 conn.executescript(sql_script)
-conn.commit()
 
 # Fetch data from the SQLite database
 query = "SELECT name, longitude, latitude FROM  Water_Fountains"
 data = pd.read_sql(query, conn)
+
+print("Executing SQL script:")
+
 
 m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=15)
 
