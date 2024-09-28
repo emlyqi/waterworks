@@ -22,8 +22,8 @@
 -- SELECT AVG(taste)
 -- FROM water_fountains_rating
 -- WHERE water_fountain_id = 3;
--- @block
-SELECT user_id, water_fountain_id, taste, texture FROM water_fountains_rating;
+-- -- @block
+-- SELECT user_id, water_fountain_id, taste, texture FROM water_fountains_rating;
 
 -- -- @block
 -- INSERT INTO water_fountains_rating (user_id, water_fountain_id, taste, texture)
@@ -32,8 +32,8 @@ SELECT user_id, water_fountain_id, taste, texture FROM water_fountains_rating;
 --     (3, 2, 2, 2.1),
 --     (2, 3, 5, 5),
 --     (4, 3, 5, 5);
--- @block
-SELECT id, fountain_name, building, location_in_building, status, water_bottle_filler FROM water_fountains;
+-- -- @block
+-- SELECT id, fountain_name, building, location_in_building, status, water_bottle_filler FROM water_fountains;
 -- -- @block
 -- INSERT INTO Water_Fountains (name, building, location_in_building, status, water_bottle_filler)
 -- VALUES 
@@ -41,8 +41,8 @@ SELECT id, fountain_name, building, location_in_building, status, water_bottle_f
 --     ('Irene''s favorite', 'RCH', 'Basement', 'Working', 1),
 --     ('PACtrick', 'PAC', 'Main Entrance', 'Working', 1);
 
--- @block
-SELECT id, username, WATIAM, bio FROM users;
+-- -- @block
+-- SELECT id, username, WATIAM, bio FROM users;
 
 -- -- @block
 -- INSERT INTO Users (username, WATIAM, bio)
