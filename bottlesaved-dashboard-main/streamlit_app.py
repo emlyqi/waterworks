@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import math
 from pathlib import Path
-
+from pages import graphs
+from pages import map
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
     page_title='Bottle Saved at Top 50 Water Fountains',
@@ -11,6 +12,22 @@ st.set_page_config(
 
 # -----------------------------------------------------------------------------
 # Declare some useful functions.
+# Check if 'key' already exists in session_state
+# If not, then initialize it
+# if 'key' not in st.session_state:
+#     st.session_state['key'] = 'value'
+
+
+# st.title('Counter Example')
+# count = 0
+
+# increment = st.button('Increment')
+# if increment:
+#     count += 1
+
+# st.write('Count = ', count)
+
+
 
 
 @st.cache_data
