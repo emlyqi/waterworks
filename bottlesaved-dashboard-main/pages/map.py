@@ -18,12 +18,12 @@ conn = sqlite3.connect('temp_database.db')
 with open('waterworks.session.sql', 'r') as file:
    sql_script = file.read()
 
-conn.execute(sql_script)
+conn.executescript(sql_script)
+conn.commit()
 
 # Fetch data from the SQLite database
 query = "SELECT name, longitude, latitude FROM Water_Fountains"
 data = pd.read_sql(query, conn)
-
 
 m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=15)
 
