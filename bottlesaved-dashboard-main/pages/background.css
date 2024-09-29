@@ -1,0 +1,8 @@
+
+.reportview-container {
+    background-image: url("https://eavf3cou74b.exactdn.com/wp-content/uploads/2021/10/06105922/Water-Drop-Photography-Tutorial-3.jpg?strip=all&lossy=1&ssl=1");
+    background-size: 100vw 100vh;  
+    background-position: center;  
+    background-repeat: no-repeat;
+    height: 100vh; /* Ensures it covers the entire viewport height */
+}

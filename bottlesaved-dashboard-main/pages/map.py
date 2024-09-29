@@ -4,6 +4,46 @@ import folium
 from streamlit_folium import st_folium
 import pandas as pd
 import mysql.connector
+import os
+
+# # Path to your background image
+# background_image_path = os.path.join("assets", "hugeBg.png")
+
+# Set up CSS for the background
+
+# background_image = """
+# <style>
+# [data-testid="stAppViewContainer"] > .main {
+#     background-image: url("{background_image_path}");
+#     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
+#     background-position: center;  
+#     background-repeat: no-repeat;
+# }
+# </style>
+# """
+# st.markdown(background_image, unsafe_allow_html=True)
+
+def load_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+load_css("C:/Users/cathe/waterworks/bottlesaved-dashboard-main/pages/background.css")
+
+
+
+# # st.markdown(
+#     f"""
+#     <style>
+#     .stApp {{
+#         background-image: url({background_image_path});
+#         background-size: cover;
+#         background-position: center;
+#         background-repeat: no-repeat;
+#     }}
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 def create_connection():
     connection = mysql.connector.connect(
@@ -32,8 +72,6 @@ with conn.cursor() as cursor:
 
 # Fetch data from the SQLite database
 
-
-
 m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=15)
 
 folium.TileLayer('openstreetmap').add_to(m)
@@ -55,3 +93,4 @@ for idx, row in data.iterrows():
 
 # Display the map
 st_folium(m, width=700)
+
