@@ -21,7 +21,7 @@ if "shared" not in st.session_state:
 # Create a temporary SQLite database
 conn = create_connection()
 
-query = "SELECT fountain_name, longitude, latitude FROM  Water_Fountains"
+query = "SELECT fountain_name, building, location_in_building, longitude, latitude FROM  Water_Fountains"
 
 # Read SQL file and execute it
 with conn.cursor() as cursor:
@@ -53,7 +53,7 @@ for idx, row in data.iterrows():
         fill=True,
         fill_color='blue',
         fill_opacity=0.6,
-        popup=row['fountain_name']
+        popup =row['fountain_name']+ '\nBuilding: ' + row['building'] + '\n Spot: ' + row['location_in_building']
     ).add_to(m)
 
 # Display the map
