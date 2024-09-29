@@ -10,9 +10,17 @@ st.set_page_config(
     page_icon=':earth_americas:', # This is an emoji shortcode. Could be a URL too.
 )
 
-st.header('Hello World')
-st.selectbox('Who are you?', ['Login','Register','WatIAm'])
-st.button('Click this button to go in!')
+st.header('Welcome to WaterWorks 🤣😭💧! Rate your favourite campus fountains.', divider='gray')
 
-st.header('Welcome to WaterWorks! Rate your favourite campus fountains.', divider='gray')
+
+import webbrowser
+
+url = 'https://www.figma.com/proto/FEQXQxkTZfBenvMYxaxtZ3/cute?node-id=15-1205&node-type=frame&t=eSieWsLVPfvhFYe4-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=15%3A1205&show-proto-sidebar=1'
+
+if st.button('Click this button to go in 🤩 (or scroll down if you dare😈...)!'):
+    webbrowser.open_new_tab(url)
+
+iframe_code = '''<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="1000" src="https://embed.figma.com/proto/FEQXQxkTZfBenvMYxaxtZ3/cute?node-id=15-1205&node-type=frame&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=15%3A1205&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>'''
+st.markdown(iframe_code, unsafe_allow_html=True)
+
 st.text('This website is not fully functional yet. Come back soon....')
