@@ -5,6 +5,37 @@ from streamlit_folium import st_folium
 import pandas as pd
 import mysql.connector
 
+# Path to your background image
+background_image_path = "./assets/justBg.png"  # Replace with your image path
+
+# Set up CSS for the background
+
+background_image = """
+<style>
+[data-testid="stAppViewContainer"] > .main {
+    background-image: url("assets/justBg.png");
+    background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(background_image, unsafe_allow_html=True)
+
+# # st.markdown(
+#     f"""
+#     <style>
+#     .stApp {{
+#         background-image: url({background_image_path});
+#         background-size: cover;
+#         background-position: center;
+#         background-repeat: no-repeat;
+#     }}
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
+
 def create_connection():
     connection = mysql.connector.connect(
         host='localhost',  # e.g., 'localhost'
@@ -32,11 +63,6 @@ with conn.cursor() as cursor:
 
 # Fetch data from the SQLite database
 
-
-
-print("Executing SQL script:")
-
-
 m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=15)
 
 folium.TileLayer('openstreetmap').add_to(m)
@@ -58,3 +84,4 @@ for idx, row in data.iterrows():
 
 # Display the map
 st_folium(m, width=700)
+
