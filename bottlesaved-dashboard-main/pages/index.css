@@ -1,0 +1,186 @@
+.waterdrops-icon {
+    position: absolute;
+    top: -31px;
+    left: -452px;
+    width: 1730.9px;
+    height: 1984.4px;
+}
+.waterworks {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.vector-icon {
+    position: absolute;
+    height: 88.24%;
+    width: 23.44%;
+    top: 5.88%;
+    right: -49.48%;
+    bottom: 5.88%;
+    left: 126.04%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    display: none;
+}
+.top {
+    position: absolute;
+    top: 37px;
+    left: 51px;
+    width: 192px;
+    height: 51px;
+}
+.register-sticky-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #f7f4ea;
+    width: 286.6px;
+    height: 363.3px;
+}
+.register-sticky-item {
+    position: absolute;
+    top: 89px;
+    left: 30px;
+    border-radius: 10px;
+    background-color: #9fc5e4;
+    border: 2px solid #19344b;
+    box-sizing: border-box;
+    width: 228.1px;
+    height: 32.9px;
+}
+.register-sticky-inner {
+    position: absolute;
+    top: 136.45px;
+    left: 28.96px;
+    border-radius: 10px;
+    background-color: #9fc5e4;
+    border: 2px solid #19344b;
+    box-sizing: border-box;
+    width: 228.1px;
+    height: 32.9px;
+}
+.rectangle-div {
+    position: absolute;
+    top: 253.15px;
+    left: 29.55px;
+    border-radius: 10px;
+    background-color: #f9db7a;
+    border: 1px solid #19344b;
+    box-sizing: border-box;
+    width: 228.1px;
+    height: 44.3px;
+    cursor: pointer;
+}
+.register {
+    position: absolute;
+    top: 43.69px;
+    left: 28.96px;
+    font-size: 24px;
+    font-family: MuseoModerno;
+    display: inline-block;
+    width: 103.4px;
+    height: 35.3px;
+}
+.join {
+    position: absolute;
+    top: 259.73px;
+    left: 86.88px;
+    font-size: 20px;
+    font-family: MuseoModerno;
+    text-align: center;
+    display: inline-block;
+    width: 110.5px;
+    height: 35.3px;
+}
+.watiam-id {
+    position: absolute;
+    top: 96.95px;
+    left: 41.37px;
+    font-weight: 300;
+    color: #dfecf7;
+    display: inline-block;
+    width: 137.1px;
+    height: 19.2px;
+}
+.or-login {
+    position: absolute;
+    top: 311.8px;
+    left: 73.29px;
+    font-size: 14px;
+    text-decoration: underline;
+    text-align: center;
+    display: inline-block;
+    width: 137.1px;
+    height: 19.2px;
+    cursor: pointer;
+}
+.password {
+    position: absolute;
+    top: 143.63px;
+    left: 41.37px;
+    font-weight: 300;
+    color: #dfecf7;
+    display: inline-block;
+    width: 137.1px;
+    height: 19.2px;
+}
+.register-sticky-child1 {
+    position: absolute;
+    top: 183.73px;
+    left: 29.55px;
+    border-radius: 10px;
+    background-color: #9fc5e4;
+    border: 2px solid #19344b;
+    box-sizing: border-box;
+    width: 228.1px;
+    height: 32.9px;
+}
+.confirm-password {
+    position: absolute;
+    top: 190.91px;
+    left: 41.96px;
+    font-weight: 300;
+    color: #dfecf7;
+    display: inline-block;
+    width: 137.1px;
+    height: 19.2px;
+}
+.register-sticky {
+    position: absolute;
+    top: 250px;
+    left: 46px;
+    width: 286.6px;
+    height: 363.3px;
+    font-size: 15px;
+    font-family: 'Merriweather Sans';
+}
+.image-2-icon {
+    position: absolute;
+    top: 225px;
+    left: 250.18px;
+    width: 113.9px;
+    height: 114.5px;
+    object-fit: contain;
+}
+.image-2-icon1 {
+    position: absolute;
+    top: 257.32px;
+    left: 254.9px;
+    width: 114.1px;
+    height: 115.3px;
+    object-fit: contain;
+}
+.register-real {
+    width: 100%;
+    position: relative;
+    background-color: #d4e3ef;
+    height: 852px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 32px;
+    color: #19344b;
+    font-family: MuseoModerno;
+}
+

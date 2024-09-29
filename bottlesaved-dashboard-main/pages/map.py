@@ -23,12 +23,24 @@ import os
 # """
 # st.markdown(background_image, unsafe_allow_html=True)
 
-def load_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+# def load_css(file_name):
+#     with open(file_name) as f:
+#         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-load_css("C:/Users/cathe/waterworks/bottlesaved-dashboard-main/pages/background.css")
+# load_css("C:/Users/cathe/waterworks/bottlesaved-dashboard-main/pages/background.css")
 
+background_image = """
+<style>
+[data-testid="stAppViewContainer"] > .main {
+    background-image: url("https://i.ibb.co/fMMhNLB/hugeBg.png");
+    background-size: 100vw 140vh;  # This sets the size to cover 100% of the viewport width and height
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+</style>
+"""
+
+st.markdown(background_image, unsafe_allow_html=True)
 
 
 # # st.markdown(
