@@ -23,8 +23,21 @@
       "port": 3306,
       "driver": "MySQL",
       "name": "testing2",
-      "database": "waterworks1",
+      "database": "waterworks",
       "username": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "waterworks",
+      "database": "waterworks",
+      "username": "yuan"
     }
   ]
 }

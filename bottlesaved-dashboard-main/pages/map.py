@@ -4,23 +4,32 @@ import folium
 from streamlit_folium import st_folium
 import pandas as pd
 import mysql.connector
+import os
 
-# Path to your background image
-background_image_path = "./assets/justBg.png"  # Replace with your image path
+# # Path to your background image
+# background_image_path = os.path.join("assets", "hugeBg.png")
 
 # Set up CSS for the background
 
-background_image = """
-<style>
-[data-testid="stAppViewContainer"] > .main {
-    background-image: url("assets/justBg.png");
-    background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
-    background-position: center;  
-    background-repeat: no-repeat;
-}
-</style>
-"""
-st.markdown(background_image, unsafe_allow_html=True)
+# background_image = """
+# <style>
+# [data-testid="stAppViewContainer"] > .main {
+#     background-image: url("{background_image_path}");
+#     background-size: 100vw 100vh;  # This sets the size to cover 100% of the viewport width and height
+#     background-position: center;  
+#     background-repeat: no-repeat;
+# }
+# </style>
+# """
+# st.markdown(background_image, unsafe_allow_html=True)
+
+def load_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+load_css("C:/Users/cathe/waterworks/bottlesaved-dashboard-main/pages/background.css")
+
+
 
 # # st.markdown(
 #     f"""
