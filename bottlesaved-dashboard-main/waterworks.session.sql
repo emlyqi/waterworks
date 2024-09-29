@@ -31,8 +31,24 @@
 --     (3, 2, 2, 2.1),
 --     (2, 3, 5, 5),
 --     (4, 3, 5, 5);
--- -- @block
--- SELECT id, fountain_name, building, location_in_building, status, water_bottle_filler FROM water_fountains;
+
+-- @block
+INSERT INTO water_fountains (fountain_name, building, location_in_building, status, water_bottle_filler, latitude, longitude)
+VALUES 
+    ('Working', 'M3', 'Third floor beside bathroom','Working',0 , 43.473373, -80.543876),
+    ('STCER', 'STC', 'First floor beside stairs','Working', 1, 43.470476, -80.543012),
+    ('Nano', 'QNC', 'Beside entrance first floor','Broken',0 , 43.471150, -80.544517),
+    ('Health', 'LHI', 'Second floor beside bathroom','Working',1 , 43.473255, -80.545781),
+    ('mathy', 'MC', 'Fifth floor beside the bathroom','Broken', 0 , 43.472076, -80.543574),
+    ('CHEM', 'C2', 'First floor beside bathroom','Broken', 1 , 43.472328, -80.542743),
+    ('eng', 'E3', 'Basement beside atrium','Working', 1, 43.471296, -80.541392),
+    ('bookworm', 'DP', 'Tenth floor beside elevator','Working', 1, 43.469942, -80.542431),
+    ('worker', 'E7', 'Second floor beside staircase','Working', 1, 43.473212, -80.539265),
+    ('lecture', 'DWE', 'Basement beside 101','Broken',0 , 43.469721, -80.540367),
+    ('WWW', 'SCH', 'First floor beside W store','Working',0 ,43.469161, -80.540657),
+    ('washroom', 'AL', 'Basement beside women washroom','Working', 1, 43.468726, -80.541472);
+-- @block
+SELECT * FROM water_fountains;
 -- -- @block
 -- INSERT INTO Water_Fountains (name, building, location_in_building, status, water_bottle_filler)
 -- VALUES 
