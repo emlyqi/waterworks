@@ -34,9 +34,6 @@ with conn.cursor() as cursor:
 
 
 
-print("Executing SQL script:")
-
-
 m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=15)
 
 folium.TileLayer('openstreetmap').add_to(m)
