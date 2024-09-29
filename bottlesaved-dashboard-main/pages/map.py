@@ -32,8 +32,6 @@ with conn.cursor() as cursor:
 
 # Fetch data from the SQLite database
 
-
-
 m = folium.Map(location=[data['latitude'].mean(), data['longitude'].mean()], zoom_start=15)
 
 folium.TileLayer('openstreetmap').add_to(m)
